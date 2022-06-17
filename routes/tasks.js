@@ -13,6 +13,20 @@ router.get('/task/:id', (req, res) => {
     .json({ msg: 'success', data: `Retrieved Task Number: #${id}` });
 });
 
+router.patch('/task/:id', (req, res) => {
+  const { id } = req.params;
+  res
+    .status(200)
+    .json({ msg: 'success', data: `Task Number: #${id} was updated` });
+});
+
+router.delete('/task/:id', (req, res) => {
+  const { id } = req.params;
+  res
+    .status(200)
+    .json({ msg: 'success', data: `Task Number: #${id} was deleted` });
+});
+
 router.post('/task', (req, res) => {
   console.log(req.body);
   const task = req.body;
